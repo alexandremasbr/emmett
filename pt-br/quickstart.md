@@ -235,6 +235,7 @@ e *echo.html*:
 ```
 
 > – Então, a mensagem que eu coloquei no modelo é o valor retornado da minha função `echo()`? 
+
 > – *você pegou!*
 
 O dicionário retornado por suas funções é o *contexto* do modelo, no qual
@@ -291,7 +292,7 @@ Lidar com requests (solicitações)
 
 Agora vamos tentar ir a algum lugar mais profundo na lógica central de Emmett.
 
-> – Como meu aplicativo pode reagir às solicitações do cliente?
+> – Como meu aplicativo pode reagir às solicitações do cliente?   
 > – *você pode começar com o objeto `request`*
 
 ### O objeto request
