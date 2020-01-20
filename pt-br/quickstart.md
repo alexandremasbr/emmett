@@ -79,7 +79,7 @@ async def double(number):
 Então, basicamente, se tentarmos abrir a URL para a função `double` do último exemplo
 com uma string, como '/double/foo', ela não corresponderá e Emmett retornará um erro 404.
 
-> - Tudo bem. Mas, e se eu quiser um argumento condicional para minha função?
+> – Tudo bem. Mas, e se eu quiser um argumento condicional para minha função?
 
 Basta escrever a URL colocando a parte condicional entre parênteses e um ponto de interrogação
 no fim:
@@ -120,7 +120,7 @@ async def g():
 Se você não tem idéia do que é um método HTTP - não se preocupe -
 [A Wikipedia possui boas informações](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) sobre eles.
 
-> - OK, entendi. O que mais posso fazer com a rota?
+> – OK, entendi. O que mais posso fazer com a rota?
 
 Como esta é uma *visão geral rápida* do Emmett, você deve verificar o
 [Capítulo de roteamento](routing.md) da documentação para obter a lista completa dos parâmetros
@@ -185,7 +185,7 @@ url('static', 'js/common.js')
 ```
 que apontará para o arquivo em *static/js/common.js *
 
-> - Mas talvez eu possa escrever diretamente */static/js/common.js* em vez de usar
+> – Mas talvez eu possa escrever diretamente */static/js/common.js* em vez de usar
 a função `url ()`?
 
 Obviamente, você pode. No entanto, o Emmett fornece alguns recursos úteis para arquivos estáticos
@@ -204,7 +204,7 @@ Emmett fornece o templating engine *Renoir*, o que significa que você pode usar
 diretamente em seus arquivos HTML. Vamos ver com um exemplo.
 Podemos fazer uma nova aplicação com esta estrutura:
 
->NT - o Web2py usa o mesmo template engine 
+> – NT: o Web2py usa o mesmo template engine 
 
 
 ```
@@ -234,8 +234,8 @@ e *echo.html*:
 </html>
 ```
 
-> - Então, a mensagem que eu coloquei no modelo é o valor retornado da minha função `echo ()`?
-> - *você pegou!*
+> – Então, a mensagem que eu coloquei no modelo é o valor retornado da minha função `echo ()`?
+> – *você pegou!*
 
 O dicionário retornado por suas funções é o *contexto* do modelo, no qual
 você pode inserir os valores definidos no código Python. Além disso, já que tudo o que você
@@ -291,8 +291,8 @@ Lidar com requests (solicitações)
 
 Agora vamos tentar ir a algum lugar mais profundo na lógica central de Emmett.
 
-> - Como meu aplicativo pode reagir às solicitações do cliente?
-> - *você pode começar com o objeto `request` *
+> – Como meu aplicativo pode reagir às solicitações do cliente?
+> – *você pode começar com o objeto `request` *
 
 ### O objeto request
 Você pode acessar o objeto `request` do Emmett usando um import:
@@ -334,7 +334,7 @@ Agora, quando um cliente chama a URL */post/123?editor=markdown*, o parâmetro `
 será mapeado para `request.query_params` e podemos acessar seu valor simplesmente chamando
 o nome do parâmetro como um atributo.
 
-> - Espere, o que acontece se o cliente chamar */post/123* e meu aplicativo tentar acessar *request.params.editor*, que não está no URL?
+> – Espere, o que acontece se o cliente chamar */post/123* e meu aplicativo tentar acessar *request.params.editor*, que não está no URL?
 
 Simples! O atributo será "Nenhum", portanto é totalmente seguro chamá-lo. Não vai
 crie qualquer exceção.
@@ -347,8 +347,8 @@ Mais informações sobre o objeto `request` podem ser encontradas no
 
 > NT A tradução literal de pipeline é tubulação, mas vamos deixar o termo em inglês, porque o sentido é figurado mesmo. Pipe é tubo. 
 
-> - E se eu quiser fazer algo antes e depois da solicitação?
-> - *Você pode usar o pipeline.*
+> – E se eu quiser fazer algo antes e depois da solicitação?
+> – *Você pode usar o pipeline.*
 
 Emmett usa o pipeline para executar operações antes e depois de executar as funções
 definido com suas regras de roteamento.
@@ -469,8 +469,8 @@ O código acima é bastante simples: o aplicativo incrementa o contador toda vez
 visita a página e retorna esse número ao usuário. Basicamente, você pode armazenar um valor para
 a sessão do usuário e recupere-a sempre que a sessão for mantida.
 
-> - e se eu tentar acessar um atributo não existente na sessão?
-> - *o mesmo que `request.query_params`: o atributo será` None` e você não precisará capturar nenhuma exceção*
+> – e se eu tentar acessar um atributo não existente na sessão?
+> – *o mesmo que `request.query_params`: o atributo será` None` e você não precisará capturar nenhuma exceção*
 
 Mais informações sobre o armazenamento de sistemas estão disponíveis no
 [Capítulo da sessão](./sessions.md) da documentação.
