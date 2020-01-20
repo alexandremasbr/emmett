@@ -19,7 +19,7 @@ async def hello():
     return "Olá mundo!"
 ```
 
-Aqui está. Salve-o como * hello.py * e execute-o com Emmett:
+Aqui está. Salve-o como *hello.py* e execute-o com Emmett:
 
 ```bash
 > emmett -a hello.py develop
@@ -30,12 +30,14 @@ Agora, se você for para [http://127.0.0.1:8000](https://127.0.0.1:8000), dever�
 
 Routing (Roteamento)
 -------
+>NT: Route(rota) no desenvolvimento web é o mapeamento do caminho da URL (meusite/pagina1) até o código que irá fazer o tratamento da solicitação e preparar a resposta. Routing é execução da rota. 
+
 Como você viu no exemplo 'Olá mundo!' nós *roteamos* a função `hello()`. O que isso significa?
 
 Na verdade, é bastante simples: o decorador de rota do objeto de aplicativo é usado para
 definir o roteamento do seu aplicativo.
 
->NT: Route(rota) no desenvolvimento web é o mapeamento do caminho da URL (meusite/pagina1) até o código que irá fazer o tratamento da solicitação e preparar a resposta. Routing é execução da rota. 
+
 
 > – Espere, você quer dizer que não há necessidade de uma tabela de roteamento?   
 > – *Não.*   
@@ -69,7 +71,7 @@ async def double(number):
 | int | aceita números inteiros |
 | float | aceita flutuadores em notação de ponto |
 | str | aceita strings |
-| date | aceita seqüências de datas no formato * AAAA-MM-DD * |
+| date | aceita seqüências de datas no formato *AAAA-MM-DD* |
 | alpha | aceita cadeias contendo apenas letras|
 | any | aceita qualquer caminho (também com barras) |
 
@@ -116,11 +118,11 @@ async def g():
 ```
 
 Se você não tem idéia do que é um método HTTP - não se preocupe -
-[A Wikipedia possui boas informações] (http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) sobre eles.
+[A Wikipedia possui boas informações](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) sobre eles.
 
 > - OK, entendi. O que mais posso fazer com a rota?
 
-Como esta é uma * visão geral rápida * de Emmett, você deve verificar o
+Como esta é uma *visão geral rápida* do Emmett, você deve verificar o
 [Capítulo de roteamento](routing.md) da documentação para obter a lista completa dos parâmetros
 aceito pelo decorador `route()`.
 
@@ -189,7 +191,7 @@ a função `url ()`?
 Obviamente, você pode. No entanto, o Emmett fornece alguns recursos úteis para arquivos estáticos
 URLs, como idiomas e controle de versão, que são aplicados automaticamente com base no seu
 configuração de aplicativo. Você pode encontrar mais informações no
-[Capítulo de roteamento] (routing.md) da documentação.
+[Capítulo de roteamento](routing.md) da documentação.
 
 
 Renderizando a saída
@@ -233,9 +235,9 @@ e *echo.html*:
 ```
 
 > - Então, a mensagem que eu coloquei no modelo é o valor retornado da minha função `echo ()`?
-> - * você pegou! *
+> - *você pegou!*
 
-O dicionário retornado por suas funções é o * contexto * do modelo, no qual
+O dicionário retornado por suas funções é o *contexto* do modelo, no qual
 você pode inserir os valores definidos no código Python. Além disso, já que tudo o que você
 escreve dentro de colchetes `{{}}` é avaliado como código Python normal, você pode facilmente
 gerar HTML com condições e ciclos:
@@ -256,13 +258,13 @@ Como você pode ver a única diferença entre o modelo Renoir e um código Pytho
 termina de bloco - normalmente temos recuo no Python, mas não podemos usá-lo no HTML.
 
 O sistema de modelos tem muitos outros recursos: explore-os no
-[Capítulo Templates] (./templates.md) da documentação.
+[Capítulo Templates](./templates.md) da documentação.
 
 ### Outras opções de renderização
 Muitas vezes, você precisará renderizar suas funções em formatos diferentes de
 HTML, como JSON.
 
-Emmett pode ajudá-lo com o decorador * service *
+Emmett pode ajudá-lo com o decorador *service*
 
 
 ```python
@@ -280,8 +282,8 @@ async def f():
 
 A saída será um objeto JSON com o conteúdo convertido do seu dicionário Python.
 
-O módulo `service` possui outros auxiliares, como o formato * XML *: vá além no
-[Capítulo Serviços] (./ serviços) da documentação.
+O módulo `service` possui outros auxiliares, como o formato *XML*: vá além no
+[Capítulo Serviços](./ serviços) da documentação.
 
 
 Lidar com requests (solicitações)
@@ -290,7 +292,7 @@ Lidar com requests (solicitações)
 Agora vamos tentar ir a algum lugar mais profundo na lógica central de Emmett.
 
 > - Como meu aplicativo pode reagir às solicitações do cliente?
-> - * você pode começar com o objeto `request` *
+> - *você pode começar com o objeto `request` *
 
 ### O objeto request
 Você pode acessar o objeto `request` do Emmett usando um import:
@@ -305,7 +307,7 @@ alguns deles:
 
 | atributo | descrição
 | --- | --- |
-| scheme | pode ser * http * ou * https * |
+| scheme | pode ser *http* ou *https* |
 | method | o método HTTP de solicitação |
 | now | um objeto de data e hora do pêndulo criado com solicitação |
 | query_params | um objeto que contém parâmetros de URL |
@@ -332,7 +334,7 @@ Agora, quando um cliente chama a URL */post/123?editor=markdown*, o parâmetro `
 será mapeado para `request.query_params` e podemos acessar seu valor simplesmente chamando
 o nome do parâmetro como um atributo.
 
-> - Espere, o que acontece se o cliente chamar */post/123* e meu aplicativo tentar acessar * request.params.editor *, que não está no URL?
+> - Espere, o que acontece se o cliente chamar */post/123* e meu aplicativo tentar acessar *request.params.editor*, que não está no URL?
 
 Simples! O atributo será "Nenhum", portanto é totalmente seguro chamá-lo. Não vai
 crie qualquer exceção.
@@ -346,12 +348,12 @@ Mais informações sobre o objeto `request` podem ser encontradas no
 > NT A tradução literal de pipeline é tubulação, mas vamos deixar o termo em inglês, porque o sentido é figurado mesmo. Pipe é tubo. 
 
 > - E se eu quiser fazer algo antes e depois da solicitação?
-> - * Você pode usar o pipeline. *
+> - *Você pode usar o pipeline.*
 
 Emmett usa o pipeline para executar operações antes e depois de executar as funções
 definido com suas regras de roteamento.
 
-O pipeline é uma lista de * pipes *, objetos da classe `Pipe`.
+O pipeline é uma lista de *pipes*, objetos da classe `Pipe`.
 Vamos ver como criar um deles:
 
 
@@ -370,7 +372,7 @@ class MyPipe(Pipe):
 ```
 
 Como você pode ver, o `Pipe` fornece métodos para executar seu código antes que a solicitação seja processada por sua função (com o método `open`) e depois que sua função foi executada,
-fornecendo métodos diferentes, dependendo do que aconteceu em sua função: se ocorrer uma exceção, Emmett chamará o método `on_pipe_failure`, caso contrário, o método `on_pipe_success`. O método `close` é ** sempre ** chamado após cada solicitação ter sido processada, * após * a resposta foi criada e * antes * de enviá-la ao cliente.
+fornecendo métodos diferentes, dependendo do que aconteceu em sua função: se ocorrer uma exceção, Emmett chamará o método `on_pipe_failure`, caso contrário, o método `on_pipe_success`. O método `close` é **sempre** chamado após cada solicitação ter sido processada, *após* a resposta foi criada e *antes* de enviá-la ao cliente.
 
 Para registrar seu pipe em uma função, basta escrever:
 
@@ -390,7 +392,7 @@ app.pipeline = [MyPipe()]
 ```
 
 Emmett também fornece um pip `Injector`, projetado para adicionar métodos de ajuda a
-os modelos. Explore o [capítulo Pipeline] (request.md#pipeline) da documentação
+os modelos. Explore o [capítulo Pipeline](request.md#pipeline) da documentação
 para mais informações.
 
 ### Redirects (Redirecionamentos) e erros
@@ -437,7 +439,7 @@ async def post(id):
 ```
 
 Como você pode ver, os aplicativos Emmett podem lidar com ações específicas em erros de HTTP.
-Para mais informações, consulte o [Capítulo Tratamento de erros] (./request.md#errors_and_redirects) da documentação.
+Para mais informações, consulte o [Capítulo Tratamento de erros](./request.md#errors_and_redirects) da documentação.
 
 Sessions(Sessões)
 --------
@@ -468,10 +470,10 @@ visita a página e retorna esse número ao usuário. Basicamente, você pode arm
 a sessão do usuário e recupere-a sempre que a sessão for mantida.
 
 > - e se eu tentar acessar um atributo não existente na sessão?
-> - * o mesmo que `request.query_params`: o atributo será` None` e você não precisará capturar nenhuma exceção *
+> - *o mesmo que `request.query_params`: o atributo será` None` e você não precisará capturar nenhuma exceção*
 
 Mais informações sobre o armazenamento de sistemas estão disponíveis no
-[Capítulo da sessão] (./sessions.md) da documentação.
+[Capítulo da sessão](./sessions.md) da documentação.
 
 Criando formulários
 --------------
@@ -501,12 +503,12 @@ async def a():
 Como você pode ver, a classe `Form` aceita uma lista de campos para a entrada, e você
 pode adicionar validação aos seus campos. A classe `Form` vem com muitas opções. Por exemplo, você pode definir um método `onvalidation` para executar validação adicional, além dos requisitos dos campos.
 
-Você também pode personalizar a renderização e o estilo do formulário ou gerar formulários a partir de tabelas de banco de dados criadas com o [ORM] (/orm.md) integrado. Confira o [capítulo Forms] (./forms.md) da documentação e as [Extensão BS3?] (#) que adiciona o estilo do Bootstrap 3 aos seus formulários.
+Você também pode personalizar a renderização e o estilo do formulário ou gerar formulários a partir de tabelas de banco de dados criadas com o [ORM](/orm.md) integrado. Confira o [capítulo Forms](./forms.md) da documentação e as [Extensão BS3?](#) que adiciona o estilo do Bootstrap 3 aos seus formulários.
 
 Línguas e internacionalização (i18n)
 ----------------------------------
 
-O Emmett fornece o * Severus * como seu mecanismo de internacionalização integrado, o que ajuda você a escrever aplicativos com suporte a diferentes idiomas.
+O Emmett fornece o *Severus* como seu mecanismo de internacionalização integrado, o que ajuda você a escrever aplicativos com suporte a diferentes idiomas.
 Mas como isso funciona?
 
 
@@ -520,7 +522,7 @@ async def index():
     return dict(hello=hello)
 ```
 
-Como você pode ver, Emmett expõe um tradutor de idiomas com o objeto `T`. Então, o que você deve fazer com os idiomas? Você pode escrever sua tradução em um arquivo * json * ou * yaml * dentro da pasta * languages * do aplicativo, nomeando-o para o código do idioma que deseja usar. Isso é "pt" para portugues e "pt-br", então nosso arquivo *pt-br.json * será semelhante a:
+Como você pode ver, Emmett expõe um tradutor de idiomas com o objeto `T`. Então, o que você deve fazer com os idiomas? Você pode escrever sua tradução em um arquivo *json* ou *yaml* dentro da pasta *languages* do aplicativo, nomeando-o para o código do idioma que deseja usar. Isso é "pt" para portugues e "pt-br", então nosso arquivo *pt-br.json* será semelhante a:
 
 
 ```json
@@ -540,14 +542,14 @@ app.language_force_on_url = True
 Emmett usa a URL para determinar o idioma em vez do cabeçalho HTTP "Accept-Language". Isso significa que o Emmett adicionará automaticamente o suporte ao idioma nas suas regras de roteamento.
 
 Para saber mais sobre idiomas e explorar os recursos do tradutor, leia o
-documentação disponível no [capítulo Idiomas] (./languages.md).
+documentação disponível no [capítulo Idiomas](./languages.md).
 
 Continue
 --------
 
 Parabéns! Você leu tudo o que precisa para executar um simples, mas funcional
-Aplicação Emmett. Use este * guia de início rápido * como seu manual e consulte a
-[documentação completa] (./README.md) para todos os aspectos detalhados que você possa encontrar.
+Aplicação Emmett. Use este *guia de início rápido* como seu manual e consulte a
+[documentação completa](./README.md) para todos os aspectos detalhados que você possa encontrar.
 
 
 
